@@ -1,0 +1,17 @@
+{
+  "name": "sparkquest",
+  "version": "1.0.0",
+  "description": "An adaptive learning platform for kids",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "frontend": "live-server frontend --port=3000",
+    "install-all": "npm install && cd backend && npm install"
+  },
+  "keywords": ["education", "kids", "learning", "game"],
+  "author": "Your Name Here",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkQuest | Learning Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-sparkles"></i>
+                <h1>SparkQuest</h1>
+            </div>
+            <div class="user-info">
+                <div class="avatar" id="userAvatar">D</div>
+                <div class="stats">
+                    <span class="energy" id="energyCount">⚡ 150</span>
+                    <span class="level" id="userLevel">Level 3</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-area">
+            <!-- World Map (Left Panel) -->
+            <div class="world-map">
+                <h2><i class="fas fa-map"></i> Adventure Map</h2>
+                <div class="map-zones">
+                    <div class="zone math-zone active" data-zone="math">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Math Mesa</h3>
+                        <p>10 quests available</p>
+                    </div>
+                    <div class="zone science-zone" data-zone="science">
+                        <i class="fas fa-flask"></i>
+                        <h3>Science Sea</h3>
+                        <p>Coming soon!</p>
+                    </div>
+                    <div class="zone reading-zone" data-zone="reading">
+                        <i class="fas fa-book"></i>
+                        <h3>Reading Rainforest</h3>
+                        <p>Coming soon!</p>
+                    </div>
+                </div>
+                
+                <div class="class-progress">
+                    <h3>Class Goal</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="classProgress" style="width: 65%"></div>
+                    </div>
+                    <p class="progress-text">650/1000 Energy Collected</p>
+                </div>
+            </div>
+
+            <!-- Quiz Area (Center) -->
+            <div class="quiz-container">
+                <div class="quest-header">
+                    <h2 id="questName">Rescue the Lost Numbers</h2>
+                    <div class="quest-info">
+                        <span class="difficulty-badge" id="difficultyBadge">Medium</span>
+                        <span class="question-counter">Question <span id="questionNum">1</span>/5</span>
+                    </div>
+                </div>
+
+                <!-- Question Display -->
+                <div class="question-card">
+                    <div class="question-text" id="questionText">
+                        If a pizza has 8 slices and you eat 3, how many are left?
+                    </div>
+                    
+                    <!-- Answer Options -->
+                    <div class="options-grid" id="optionsContainer">
+                        <!-- Options will be inserted by JavaScript -->
+                    </div>
+                    
+                    <!-- Feedback Area -->
+                    <div class="feedback-area" id="feedbackArea">
+                        <p id="feedbackText">Choose an answer to continue!</p>
+                    </div>
+                    
+                    <!-- Controls -->
+                    <div class="controls">
+                        <button class="btn btn-hint" id="hintBtn">
+                            <i class="fas fa-lightbulb"></i> Get Hint
+                        </button>
+                        <button class="btn btn-primary" id="submitBtn" disabled>
+                            Submit Answer
+                        </button>
+                        <button class="btn btn-next" id="nextBtn" style="display: none;">
+                            Next Question <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Rewards Panel -->
+                <div class="rewards-panel">
+                    <h3><i class="fas fa-gift"></i> Recent Rewards</h3>
+                    <div class="rewards-list">
+                        <div class="reward-item">
+                            <i class="fas fa-crown"></i>
+                            <span>Math Explorer Badge</span>
+                        </div>
+                        <div class="reward-item">
+                            <i class="fas fa-chair"></i>
+                            <span>Cosmic Chair</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Player Stats (Right Panel) -->
+            <div class="player-stats">
+                <div class="stats-card">
+                    <h3><i class="fas fa-user-astronaut"></i> Your Stats</h3>
+                    <div class="stat-row">
+                        <span>Mastery Level</span>
+                        <span class="stat-value" id="masteryLevel">4</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Correct Streak</span>
+                        <span class="stat-value" id="correctStreak">2</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Questions Today</span>
+                        <span class="stat-value" id="questionsToday">12</span>
+                    </div>
+                    
+                    <div class="streak-display">
+                        <div class="streak-title">Current Streak</div>
+                        <div class="streak-dots" id="streakDots">
+                            <!-- Dots added by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ai-status">
+                    <h4><i class="fas fa-brain"></i> AI Assistant</h4>
+                    <p id="aiMessage">Adapting difficulty to your level...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SparkQuest © 2023 | Designed for Darryn, Destyn, and friends!</p>
+            <div class="footer-links">
+                <button id="resetBtn"><i class="fas fa-redo"></i> Reset Quiz</button>
+                <button id="mockApiBtn"><i class="fas fa-server"></i> Test Connection</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
